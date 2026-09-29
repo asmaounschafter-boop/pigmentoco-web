@@ -109,6 +109,9 @@ const fr: Dict = {
       cta: "Notre histoire",
     },
     news: { title: "Dans la presse", all: "Toutes les actualités" },
+    collaborators: {
+      title: "Partenaires & collaborateurs technologiques",
+    },
     finalCta: {
       title: "Teignons autrement.",
       body: "Teinturier, marque ou investisseur dans la deep tech : nous serions ravis d'échanger avec vous.",
@@ -218,8 +221,8 @@ const fr: Dict = {
     team: {
       title: "Fondateurs",
       members: [
-        { name: "Amal Chebbi", role: "Co-fondatrice" },
-        { name: "Ayoub Lassoued", role: "Co-fondateur" },
+        { name: "Amal Chebbi", photo: "/team/amal.jpg" },
+        { name: "Asma Chafter", photo: "/team/asma.jpg" },
       ],
     },
     values: {

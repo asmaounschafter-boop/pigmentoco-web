@@ -70,10 +70,10 @@ export function Header({ lang, labels }: { lang: Locale; labels: NavLabels }) {
         scrolled || open ? "border-b border-line bg-paper/95 shadow-sm backdrop-blur-md" : "bg-paper"
       }`}
     >
-      <div className="mx-auto flex h-18 max-w-6xl gap-4 items-center justify-between px-5 py-4 sm:px-8">
+      <div className="mx-auto flex h-18 max-w-[1380px] gap-4 items-center justify-between px-5 py-4 sm:px-8">
         <Logo lang={lang} />
 
-        <nav className="hidden items-center gap-8 md:flex" aria-label="Main">
+        <nav className="hidden ml-auto mr-6 items-center gap-8 md:flex" aria-label="Main">
           {links.map((l) => (
             <Link
               key={l.href}
@@ -91,7 +91,7 @@ export function Header({ lang, labels }: { lang: Locale; labels: NavLabels }) {
           <LangSwitch lang={lang} pathname={pathname} />
           <Link
             href={`/${lang}/contact`}
-            className="rounded-full bg-coral px-5 py-2.5 text-sm font-bold text-paper transition-colors hover:bg-coral-deep"
+            className="rounded-[5px] bg-coral px-5 py-2.5 text-sm font-bold text-paper transition-colors hover:bg-coral-deep"
           >
             {labels.cta}
           </Link>
@@ -99,7 +99,7 @@ export function Header({ lang, labels }: { lang: Locale; labels: NavLabels }) {
 
         <button
           type="button"
-          className="rounded-full border border-ink/20 px-4 py-2 text-sm font-semibold text-ink md:hidden"
+          className="rounded-[5px] border border-ink/20 px-4 py-2 text-sm font-semibold text-ink md:hidden"
           aria-expanded={open}
           aria-controls="mobile-nav"
           onClick={() => setOpen((v) => !v)}
@@ -121,7 +121,7 @@ export function Header({ lang, labels }: { lang: Locale; labels: NavLabels }) {
           </ul>
           <div className="mt-6 flex items-center justify-between">
             <LangSwitch lang={lang} pathname={pathname} />
-            <Link href={`/${lang}/contact`} className="rounded-full bg-coral px-5 py-2.5 text-sm font-bold text-paper">
+            <Link href={`/${lang}/contact`} className="rounded-[5px] bg-coral px-5 py-2.5 text-sm font-bold text-paper">
               {labels.cta}
             </Link>
           </div>
