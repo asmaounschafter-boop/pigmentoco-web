@@ -133,14 +133,14 @@ export function Header({ lang, labels }: { lang: Locale; labels: NavLabels }) {
 
 function LangSwitch({ lang, pathname }: { lang: Locale; pathname: string }) {
   return (
-    <div className="flex rounded-full border border-ink/15 p-0.5 text-xs font-bold uppercase" aria-label="Language">
+    <div className="flex rounded-[5px] border border-ink/15 p-0.5 text-xs font-bold uppercase" aria-label="Language">
       {locales.map((l) => (
         <Link
           key={l}
           href={switchLocalePath(pathname, l)}
           hrefLang={l}
           aria-current={l === lang ? "true" : undefined}
-          className={`rounded-full px-3 py-1.5 transition-colors ${
+          className={`rounded-[5px] px-3 py-1.5 transition-colors ${
             l === lang ? "bg-ink text-paper" : "text-ink/60 hover:text-ink"
           }`}
         >

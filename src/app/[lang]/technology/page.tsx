@@ -23,7 +23,7 @@ export default async function TechnologyPage({ params }: PageProps<"/[lang]/tech
             <p className="mt-6 text-lg leading-relaxed text-muted">{t.what.body}</p>
             <dl className="mt-10 grid grid-cols-3 gap-4">
               {t.what.facts.map((f) => (
-                <div key={f.label} className="rounded-2xl border border-line p-5">
+                <div key={f.label} className="rounded-[5px] border border-line p-5">
                   <dd className="font-display text-2xl text-coral sm:text-3xl">{f.value}</dd>
                   <dt className="mt-2 text-xs leading-snug text-muted">{f.label}</dt>
                 </div>
@@ -38,7 +38,7 @@ export default async function TechnologyPage({ params }: PageProps<"/[lang]/tech
       <section className="bg-deep py-24 text-paper sm:py-32">
         <Container>
           <h2 className="font-display text-4xl sm:text-5xl">{t.steps.title}</h2>
-          <ol className="mt-14 grid gap-px overflow-hidden rounded-3xl bg-paper/10 md:grid-cols-4">
+          <ol className="mt-14 grid gap-px overflow-hidden rounded-[5px] bg-paper/10 md:grid-cols-4">
             {t.steps.items.map((s, i) => (
               <li key={s.title} className="bg-deep p-8">
                 <span className="font-display text-5xl text-coral-light">{i + 1}</span>
@@ -72,7 +72,7 @@ export default async function TechnologyPage({ params }: PageProps<"/[lang]/tech
           <h2 className="font-display max-w-2xl text-4xl leading-tight sm:text-5xl">{t.benefits.title}</h2>
           <div className="mt-14 grid gap-5 sm:grid-cols-2">
             {t.benefits.items.map((b) => (
-              <div key={b.title} className="rounded-3xl bg-paper p-8">
+              <div key={b.title} className="rounded-[5px] bg-paper p-8">
                 <h3 className="text-xl font-bold">{b.title}</h3>
                 <p className="mt-2 text-muted">{b.body}</p>
               </div>
@@ -92,7 +92,7 @@ export default async function TechnologyPage({ params }: PageProps<"/[lang]/tech
             {t.status.stages.map((s, i) => (
               <li
                 key={s.title}
-                className={`relative rounded-3xl border p-8 ${s.current ? "border-coral bg-coral text-paper" : "border-line"}`}
+                className={`relative rounded-[5px] border p-8 ${s.current ? "border-coral bg-coral text-paper" : "border-line"}`}
               >
                 <p className={`text-xs font-bold uppercase tracking-[0.2em] ${s.current ? "text-paper/80" : "text-muted"}`}>
                   {s.current ? t.status.current : `0${i + 1}`}
@@ -116,7 +116,7 @@ export default async function TechnologyPage({ params }: PageProps<"/[lang]/tech
 /** Simplified CO₂ phase diagram showing the supercritical region. */
 function PhaseDiagram({ labels }: { labels: { solid: string; liquid: string; gas: string; supercritical: string; zone: string } }) {
   return (
-    <figure className="rounded-3xl bg-sand p-6 sm:p-8">
+    <figure className="rounded-[5px] bg-sand p-6 sm:p-8">
       <svg viewBox="0 0 400 300" className="h-auto w-full" role="img" aria-label="CO₂ phase diagram: solid, liquid, gas and supercritical regions">
         <defs>
           <linearGradient id="sc" x1="0" y1="1" x2="1" y2="0">

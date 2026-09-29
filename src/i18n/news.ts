@@ -1,6 +1,11 @@
 import type { Locale } from "./config";
 
+export const NEWS_CATEGORIES = ["awards", "press", "profiles", "sustainability"] as const;
+export type NewsCategory = (typeof NEWS_CATEGORIES)[number];
+
 export type NewsItem = {
+  /** An item can sit in several filters, e.g. ["press", "sustainability"]. */
+  categories: NewsCategory[];
   date: string; // ISO yyyy-mm, or "" if undated
   source: string;
   url: string;
@@ -11,6 +16,7 @@ export type NewsItem = {
 /** Add new press items at the top — the home page shows the first three. */
 export const news: NewsItem[] = [
   {
+    categories: ["awards"],
     date: "2026-09",
     source: "FashionNetwork",
     url: "https://fr.fashionnetwork.com/news/Pigmentoco-et-iroony-recompenses-aux-avantex-fashion-pitch-awards,1863266.html",
@@ -24,6 +30,7 @@ export const news: NewsItem[] = [
     },
   },
   {
+    categories: ["press", "sustainability"],
     date: "2026-06",
     source: "HEC Paris",
     url: "https://www.hec.edu/fr/dare/innovation-entrepreneuriat/pigmentoco-pionnier-de-la-teinture-textile-sans-eau",
@@ -37,6 +44,7 @@ export const news: NewsItem[] = [
     },
   },
   {
+    categories: ["profiles", "sustainability"],
     date: "",
     source: "VC4A",
     url: "https://vc4a.com/ventures/pigmentoco/?lang=fr",

@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 import { locales, SITE_URL } from "@/i18n/config";
 
-const paths = ["", "/technology", "/impact", "/about", "/news", "/contact"];
+const paths = ["", "/technology", "/impact", "/about", "/news", "/contact", "/legal/privacy", "/legal/terms", "/legal/cookies"];
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return paths.flatMap((p) =>

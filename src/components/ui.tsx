@@ -62,13 +62,30 @@ export function Bloom({ className = "" }: { className?: string }) {
   );
 }
 
-export function PageHero({ eyebrow, title, body }: { eyebrow: string; title: string; body: string }) {
+export function PageHero({
+  eyebrow,
+  title,
+  body,
+  singleLineTitle = false,
+}: {
+  eyebrow: string;
+  title: string;
+  body: string;
+  /** Keep the title on one line on wide screens (it still wraps on smaller ones). */
+  singleLineTitle?: boolean;
+}) {
   return (
     <section className="relative isolate overflow-hidden bg-deep pb-20 pt-36 text-paper sm:pb-28 sm:pt-44">
       <Bloom className="opacity-70" />
       <Container className="relative">
         <Eyebrow tone="light">{eyebrow}</Eyebrow>
-        <h1 className="font-display max-w-4xl text-4xl leading-[1.05] sm:text-6xl">{title}</h1>
+        <h1
+          className={`font-display max-w-4xl text-4xl leading-[1.05] sm:text-6xl ${
+            singleLineTitle ? "xl:max-w-none xl:whitespace-nowrap" : ""
+          }`}
+        >
+          {title}
+        </h1>
         <p className="mt-6 max-w-2xl text-lg leading-relaxed text-paper/75">{body}</p>
       </Container>
     </section>
@@ -95,14 +112,14 @@ export function ImageSlot({
   if (src)
     return (
       // eslint-disable-next-line @next/next/no-img-element
-      <img src={src} alt={alt} className={`h-full w-full rounded-3xl object-cover ${className}`} />
+      <img src={src} alt={alt} className={`h-full w-full rounded-[5px] object-cover ${className}`} />
     );
   return (
     <div
-      className={`relative flex items-end overflow-hidden rounded-3xl bg-gradient-to-br from-coral-soft via-sand to-[#d5d9ff] p-5 ${className}`}
+      className={`relative flex items-end overflow-hidden rounded-[5px] bg-gradient-to-br from-coral-soft via-sand to-[#d5d9ff] p-5 ${className}`}
     >
       <div className="absolute inset-0 bg-[repeating-linear-gradient(135deg,transparent_0_14px,rgba(5,10,58,0.05)_14px_15px)]" />
-      <div className="relative rounded-full bg-paper/80 px-3 py-1 text-[11px] font-semibold uppercase tracking-wider text-muted backdrop-blur">
+      <div className="relative rounded-[5px] bg-paper/80 px-3 py-1 text-[11px] font-semibold uppercase tracking-wider text-muted backdrop-blur">
         {label}
         {hint ? ` · ${hint}` : ""}
       </div>
@@ -113,12 +130,12 @@ export function ImageSlot({
 export function CtaBand({ title, body, button, href }: { title: string; body: string; button: string; href: string }) {
   return (
     <section className="px-5 py-20 sm:px-8">
-      <div className="relative isolate mx-auto max-w-[1380px] overflow-hidden rounded-[2rem] bg-sea px-8 py-16 text-paper sm:px-16 sm:py-20">
+      <div className="relative isolate mx-auto max-w-[1380px] overflow-hidden rounded-[5px] bg-sea px-8 py-16 text-paper sm:px-16 sm:py-20">
         <Bloom className="opacity-60" />
         <div className="relative flex flex-col gap-8 md:flex-row md:items-end md:justify-between">
           <div>
             <h2 className="font-display text-4xl sm:text-5xl">{title}</h2>
-            <p className="mt-4 max-w-xl text-paper/75">{body}</p>
+            <p className="mt-4 max-w-xl text-paper/75 xl:max-w-none xl:whitespace-nowrap">{body}</p>
           </div>
           <Button href={href}>{button}</Button>
         </div>

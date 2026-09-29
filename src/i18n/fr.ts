@@ -195,10 +195,44 @@ const fr: Dict = {
     sdg: {
       title: "Alignée avec les Objectifs de développement durable de l'ONU",
       items: [
-        { n: "6", title: "Eau propre et assainissement" },
-        { n: "12", title: "Consommation et production responsables" },
-        { n: "14", title: "Vie aquatique" },
+        {
+          n: "3",
+          title: "Bonne santé et bien-être",
+          body: "En supprimant les produits chimiques nocifs de la teinture textile, nous voulons des conditions de travail plus sûres et des communautés en meilleure santé.",
+          url: "https://www.un.org/sustainabledevelopment/fr/health/",
+        },
+        {
+          n: "6",
+          title: "Eau propre et assainissement",
+          body: "Notre teinture sans eau préserve les ressources en eau douce et évite la pollution de l'eau, pour des procédés industriels propres et durables.",
+          url: "https://www.un.org/sustainabledevelopment/fr/water-and-sanitation/",
+        },
+        {
+          n: "9",
+          title: "Industrie, innovation et infrastructure",
+          body: "Nous développons une innovation industrielle écologique qui peut redéfinir la production textile, en réduisant son impact environnemental et en favorisant une croissance durable.",
+          url: "https://www.un.org/sustainabledevelopment/fr/infrastructure/",
+        },
+        {
+          n: "13",
+          title: "Lutte contre les changements climatiques",
+          body: "Notre technologie réduit l'empreinte carbone de la teinture textile et contribue à atténuer le changement climatique, vers un avenir bas carbone.",
+          url: "https://www.un.org/sustainabledevelopment/fr/climate-change/",
+        },
+        {
+          n: "14",
+          title: "Vie aquatique",
+          body: "En empêchant les produits chimiques de teinture d'atteindre les cours d'eau, nous protégeons les écosystèmes marins et la santé des océans.",
+          url: "https://www.un.org/sustainabledevelopment/fr/oceans/",
+        },
+        {
+          n: "17",
+          title: "Partenariats pour la réalisation des objectifs",
+          body: "La collaboration est au cœur de notre mission. Nous recherchons activement des partenaires pour accélérer l'innovation durable et amplifier notre impact.",
+          url: "https://www.un.org/sustainabledevelopment/fr/globalpartnerships/",
+        },
       ],
+      learnMore: "En savoir plus",
     },
     quote: {
       text: "La teinture, c'est là que l'industrie de la mode fait le plus de dégâts — et là qu'elle a le plus à réparer.",
@@ -253,6 +287,7 @@ const fr: Dict = {
       title: "PigmentOCO dans la presse.",
       body: "Prix, portraits et étapes clés sur notre route vers la teinture sans eau.",
     },
+    filters: { title: "Filtrer :", all: "Tout", awards: "Prix", press: "Presse", profiles: "Profils", sustainability: "Durabilité", empty: "Aucune actualité dans cette catégorie pour le moment." },
   },
   contact: {
     hero: {
@@ -275,6 +310,21 @@ const fr: Dict = {
     rights: "Tous droits réservés.",
     explore: "Explorer",
     connect: "Nous suivre",
+    legal: "Légal",
+  },
+  legal: {
+    pending: "Cette page est en cours de rédaction. Pour toute question d'ici là, écrivez-nous à",
+    docs: {
+      privacy: {
+        title: "Politique de confidentialité",
+        short: "Comment PigmentOCO collecte, utilise et protège vos données personnelles.",
+      },
+      terms: { title: "Conditions générales", short: "Les règles applicables à l'utilisation du site PigmentOCO." },
+      cookies: {
+        title: "Politique relative aux cookies",
+        short: "Les cookies utilisés par ce site et la manière de les contrôler.",
+      },
+    },
   },
   notFound: { title: "Cette page a déteint.", back: "Retour à l'accueil" },
 };

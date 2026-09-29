@@ -1,5 +1,5 @@
 import { resolvePage } from "@/i18n/page";
-import { Bloom, Button, Container, CtaBand, Eyebrow, ImageSlot } from "@/components/ui";
+import { Button, Container, CtaBand, Eyebrow, ImageSlot } from "@/components/ui";
 import { NewsCards } from "@/components/NewsCards";
 
 const COLLABORATORS = [
@@ -25,8 +25,19 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
     <>
       {/* HERO */}
       <section className="relative isolate flex min-h-[92svh] flex-col justify-end overflow-hidden bg-deep pt-32 text-paper">
-        <Bloom />
-        <Container className="relative pb-16 sm:pb-24">
+        <video
+          className="absolute inset-0 -z-10 h-full w-full object-cover motion-reduce:hidden"
+          src="/video/hero.mp4"
+          poster="/video/hero-poster.jpg"
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="auto"
+          aria-hidden
+        />
+        {/* No overlay on the video: a text shadow keeps the headline readable instead */}
+        <Container className="relative pb-16 [text-shadow:0_2px_18px_rgb(0_0_0/0.55)] sm:pb-24">
           <Eyebrow tone="light">{h.hero.eyebrow}</Eyebrow>
           <h1 className="font-display max-w-5xl text-[3.2rem] leading-[0.95] sm:text-[5.5rem] lg:text-[7rem]">
             {h.hero.titleA}
@@ -68,7 +79,7 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
             </div>
             <p className="self-end text-lg leading-relaxed text-muted">{h.problem.body}</p>
           </div>
-          <dl className="mt-16 grid gap-px overflow-hidden rounded-3xl border border-line bg-line sm:grid-cols-3">
+          <dl className="mt-16 grid gap-px overflow-hidden rounded-[5px] border border-line bg-line sm:grid-cols-3">
             {h.problem.stats.map((s, i) => (
               <div key={s.value} className={`p-8 ${i === 1 ? "bg-coral text-paper" : "bg-paper"}`}>
                 <dt className="sr-only">{s.label}</dt>
@@ -136,7 +147,7 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
                     <tr key={r.name} className={us ? "bg-deep text-paper" : ""}>
                       <th
                         scope="row"
-                        className={`border-t border-line py-5 pl-5 pr-4 font-semibold ${us ? "rounded-l-2xl border-transparent font-display text-xl" : ""}`}
+                        className={`border-t border-line py-5 pl-5 pr-4 font-semibold ${us ? "rounded-l-[5px] border-transparent font-display text-xl" : ""}`}
                       >
                         {r.name}
                       </th>
@@ -146,7 +157,7 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
                           <td
                             key={j}
                             className={`border-t border-line py-5 text-center ${us ? "border-transparent" : ""} ${
-                              us && j === r.values.length - 1 ? "rounded-r-2xl" : ""
+                              us && j === r.values.length - 1 ? "rounded-r-[5px]" : ""
                             }`}
                           >
                             <span
@@ -185,7 +196,7 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
           <h2 className="font-display max-w-3xl text-4xl leading-tight sm:text-5xl">{h.partners.title}</h2>
           <div className="mt-14 grid gap-5 md:grid-cols-3">
             {h.partners.items.map((p) => (
-              <div key={p.title} className="rounded-3xl border border-paper/10 bg-paper/[0.03] p-8">
+              <div key={p.title} className="rounded-[5px] border border-paper/10 bg-paper/[0.03] p-8">
                 <div className="mb-8 h-10 w-10 rounded-full bg-gradient-to-br from-coral-light to-lagoon" aria-hidden />
                 <h3 className="font-display text-2xl">{p.title}</h3>
                 <p className="mt-3 leading-relaxed text-paper/65">{p.body}</p>

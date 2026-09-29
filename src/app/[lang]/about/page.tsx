@@ -27,7 +27,7 @@ export default async function AboutPage({ params }: PageProps<"/[lang]/about">) 
               ))}
             </div>
           </div>
-          <div className="flex items-center justify-center rounded-3xl bg-sand p-10">
+          <div className="flex items-center justify-center rounded-[5px] bg-sand p-10">
             {/* The coral mark from the logo */}
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img src="/coral.png" alt="" className="h-auto w-3/5 max-w-xs" width={512} height={512} />

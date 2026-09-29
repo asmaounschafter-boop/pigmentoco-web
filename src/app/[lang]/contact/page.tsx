@@ -22,7 +22,7 @@ export default async function ContactPage({ params }: PageProps<"/[lang]/contact
               <li key={c.title}>
                 <a
                   href={`mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(c.subject)}`}
-                  className="group flex h-full flex-col rounded-3xl border border-line p-8 transition-all hover:-translate-y-1 hover:border-coral"
+                  className="group flex h-full flex-col rounded-[5px] border border-line p-8 transition-all hover:-translate-y-1 hover:border-coral"
                 >
                   <h2 className="font-display text-2xl">{c.title}</h2>
                   <p className="mt-2 flex-1 text-muted">{c.body}</p>
@@ -34,7 +34,7 @@ export default async function ContactPage({ params }: PageProps<"/[lang]/contact
             ))}
           </ul>
 
-          <aside className="space-y-8 rounded-3xl bg-sand p-8 sm:p-10">
+          <aside className="space-y-8 rounded-[5px] bg-sand p-8 sm:p-10">
             <div>
               <p className="text-xs font-bold uppercase tracking-[0.2em] text-muted">Email</p>
               <a href={`mailto:${CONTACT_EMAIL}`} className="font-display mt-2 block break-all text-2xl text-coral hover:text-coral-deep">

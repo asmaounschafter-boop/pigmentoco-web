@@ -1,9 +1,19 @@
 import Link from "next/link";
 import type { Locale } from "@/i18n/config";
-import { formatNewsDate, news } from "@/i18n/news";
+import { formatNewsDate, news, type NewsItem } from "@/i18n/news";
 
-export function NewsCards({ lang, limit, readLabel }: { lang: Locale; limit?: number; readLabel: string }) {
-  const items = limit ? news.slice(0, limit) : news;
+export function NewsCards({
+  lang,
+  limit,
+  readLabel,
+  items: source = news,
+}: {
+  lang: Locale;
+  limit?: number;
+  readLabel: string;
+  items?: NewsItem[];
+}) {
+  const items = limit ? source.slice(0, limit) : source;
   return (
     <ul className="grid gap-5 md:grid-cols-3">
       {items.map((n) => (
@@ -12,7 +22,7 @@ export function NewsCards({ lang, limit, readLabel }: { lang: Locale; limit?: nu
             href={n.url}
             target="_blank"
             rel="noopener noreferrer"
-            className="group flex h-full flex-col rounded-3xl border border-line bg-paper p-7 transition-all hover:-translate-y-1 hover:border-coral hover:shadow-[0_20px_40px_-24px_rgba(12,27,35,0.35)]"
+            className="group flex h-full flex-col rounded-[5px] border border-line bg-paper p-7 transition-all hover:-translate-y-1 hover:border-coral hover:shadow-[0_20px_40px_-24px_rgba(12,27,35,0.35)]"
           >
             <p className="text-xs font-bold uppercase tracking-[0.18em] text-coral-deep">
               {n.source}

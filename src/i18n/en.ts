@@ -193,10 +193,44 @@ const en = {
     sdg: {
       title: "Aligned with the UN Sustainable Development Goals",
       items: [
-        { n: "6", title: "Clean water and sanitation" },
-        { n: "12", title: "Responsible consumption and production" },
-        { n: "14", title: "Life below water" },
+        {
+          n: "3",
+          title: "Good health and well-being",
+          body: "By eliminating harmful chemicals from textile dyeing, we aim to create safer working environments and healthier communities.",
+          url: "https://sdgs.un.org/goals/goal3",
+        },
+        {
+          n: "6",
+          title: "Clean water and sanitation",
+          body: "Our water-free dyeing technology conserves freshwater and prevents water pollution, promoting clean and sustainable industrial processes.",
+          url: "https://sdgs.un.org/goals/goal6",
+        },
+        {
+          n: "9",
+          title: "Industry, innovation and infrastructure",
+          body: "We are pioneering an eco-friendly industrial innovation that could redefine textile production, reducing its environmental impact and fostering sustainable growth.",
+          url: "https://sdgs.un.org/goals/goal9",
+        },
+        {
+          n: "13",
+          title: "Climate action",
+          body: "Our technology reduces the carbon footprint of textile dyeing, contributing to efforts to mitigate climate change and support a low-carbon future.",
+          url: "https://sdgs.un.org/goals/goal13",
+        },
+        {
+          n: "14",
+          title: "Life below water",
+          body: "By keeping harmful dye chemicals out of waterways, we protect marine ecosystems and contribute to the preservation of ocean health.",
+          url: "https://sdgs.un.org/goals/goal14",
+        },
+        {
+          n: "17",
+          title: "Partnerships for the goals",
+          body: "Collaboration is essential to our mission. We actively seek partnerships with organizations and stakeholders to accelerate sustainable innovation and amplify our impact.",
+          url: "https://sdgs.un.org/goals/goal17",
+        },
       ],
+      learnMore: "Learn more",
     },
     quote: {
       text: "Dyeing is where the fashion industry does the most damage — and where it has the most to fix.",
@@ -251,6 +285,7 @@ const en = {
       title: "PigmentOCO in the press.",
       body: "Awards, features and milestones on our way to waterless dyeing.",
     },
+    filters: { title: "Filter:", all: "All", awards: "Awards", press: "Press", profiles: "Profiles", sustainability: "Sustainability", empty: "No news in this category yet." },
   },
   contact: {
     hero: {
@@ -273,6 +308,15 @@ const en = {
     rights: "All rights reserved.",
     explore: "Explore",
     connect: "Connect",
+    legal: "Legal",
+  },
+  legal: {
+    pending: "This page is being drafted. For any question in the meantime, write to us at",
+    docs: {
+      privacy: { title: "Privacy Policy", short: "How PigmentOCO collects, uses and protects your personal data." },
+      terms: { title: "Terms & Conditions", short: "The rules that apply when you use the PigmentOCO website." },
+      cookies: { title: "Cookies Policy", short: "Which cookies this website uses and how you can control them." },
+    },
   },
   notFound: { title: "This page has faded.", back: "Back to home" },
 };
