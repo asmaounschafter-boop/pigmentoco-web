@@ -2,7 +2,7 @@ import Link from "next/link";
 import type { ReactNode } from "react";
 
 export function Container({ children, className = "" }: { children: ReactNode; className?: string }) {
-  return <div className={`mx-auto w-full max-w-6xl px-5 sm:px-8 ${className}`}>{children}</div>;
+  return <div className={`mx-auto w-full max-w-[1380px] px-5 sm:px-8 ${className}`}>{children}</div>;
 }
 
 export function Eyebrow({ children, tone = "coral" }: { children: ReactNode; tone?: "coral" | "light" }) {
@@ -31,11 +31,10 @@ export function Button({ href, children, variant = "primary", external }: Button
     "ghost-light": "border border-paper/30 text-paper hover:border-paper hover:bg-paper/10",
     "ghost-dark": "border border-ink/20 text-ink hover:border-ink hover:bg-ink/5",
   }[variant];
-  const cls = `group inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-bold transition-colors ${styles}`;
+  const cls = `group inline-flex items-center gap-2 rounded-[5px] px-6 py-3 text-sm font-bold transition-colors ${styles}`;
   const inner = (
     <>
       {children}
-      <span aria-hidden className="transition-transform group-hover:translate-x-0.5">→</span>
     </>
   );
   if (external || href.startsWith("mailto:"))
@@ -114,7 +113,7 @@ export function ImageSlot({
 export function CtaBand({ title, body, button, href }: { title: string; body: string; button: string; href: string }) {
   return (
     <section className="px-5 py-20 sm:px-8">
-      <div className="relative isolate mx-auto max-w-6xl overflow-hidden rounded-[2rem] bg-sea px-8 py-16 text-paper sm:px-16 sm:py-20">
+      <div className="relative isolate mx-auto max-w-[1380px] overflow-hidden rounded-[2rem] bg-sea px-8 py-16 text-paper sm:px-16 sm:py-20">
         <Bloom className="opacity-60" />
         <div className="relative flex flex-col gap-8 md:flex-row md:items-end md:justify-between">
           <div>

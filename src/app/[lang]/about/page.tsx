@@ -42,9 +42,14 @@ export default async function AboutPage({ params }: PageProps<"/[lang]/about">) 
           <ul className="mt-12 grid gap-6 sm:grid-cols-2 lg:max-w-4xl">
             {t.team.members.map((m) => (
               <li key={m.name}>
-                <ImageSlot label={dict.common.imageSlot} hint={m.name} className="aspect-[4/3]" />
+                <ImageSlot
+                  label={dict.common.imageSlot}
+                  hint={m.name}
+                  src={"photo" in m ? m.photo : undefined}
+                  alt={m.name}
+                  className="aspect-[4/3] object-[center_30%]"
+                />
                 <p className="font-display mt-5 text-2xl">{m.name}</p>
-                <p className="text-muted">{m.role}</p>
               </li>
             ))}
           </ul>

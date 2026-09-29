@@ -27,7 +27,7 @@ export default async function ContactPage({ params }: PageProps<"/[lang]/contact
                   <h2 className="font-display text-2xl">{c.title}</h2>
                   <p className="mt-2 flex-1 text-muted">{c.body}</p>
                   <span className="mt-6 text-sm font-bold text-coral group-hover:text-coral-deep">
-                    {t.write} <span aria-hidden>→</span>
+                    {t.write}
                   </span>
                 </a>
               </li>
@@ -57,7 +57,7 @@ export default async function ContactPage({ params }: PageProps<"/[lang]/contact
                     href={s.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="rounded-full border border-ink/15 bg-paper px-4 py-2 text-sm font-semibold hover:border-coral hover:text-coral"
+                    className="rounded-[5px] border border-ink/15 bg-paper px-4 py-2 text-sm font-semibold hover:border-coral hover:text-coral"
                   >
                     {s.label}
                   </a>

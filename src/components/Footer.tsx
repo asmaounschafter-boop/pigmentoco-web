@@ -15,22 +15,22 @@ export function Footer({ lang, dict }: { lang: Locale; dict: Dict }) {
     { href: `/${lang}/contact`, label: dict.nav.contact },
   ];
   return (
-    <footer className="bg-ink pt-16 text-paper">
+    <footer className="bg-linear-to-b from-[#0a1494] via-[#2c0f4c] to-[#5a0a24] pt-16 text-paper">
       <Container>
-        <div className="grid gap-12 border-b border-paper/10 pb-12 md:grid-cols-[2fr_1fr_1fr]">
+        <div className="grid gap-12 border-b border-paper/20 pb-12 md:grid-cols-[2fr_1fr_1fr]">
           <div>
             <Logo lang={lang} reverse className="h-10" />
-            <p className="mt-4 max-w-xs text-sm text-paper/60">{dict.footer.tagline}</p>
-            <a href={`mailto:${CONTACT_EMAIL}`} className="mt-6 inline-block text-sm font-semibold text-coral-light hover:text-coral-soft">
+            <p className="mt-4 max-w-xs text-sm text-paper/80">{dict.footer.tagline}</p>
+            <a href={`mailto:${CONTACT_EMAIL}`} className="mt-6 inline-block text-sm font-semibold text-coral-soft hover:text-paper">
               {CONTACT_EMAIL}
             </a>
           </div>
           <div>
-            <p className="mb-4 text-xs font-bold uppercase tracking-[0.2em] text-paper/40">{dict.footer.explore}</p>
+            <p className="mb-4 text-xs font-bold uppercase tracking-[0.2em] text-paper/60">{dict.footer.explore}</p>
             <ul className="space-y-2 text-sm">
               {nav.map((n) => (
                 <li key={n.href}>
-                  <Link href={n.href} className="text-paper/75 hover:text-coral-light">
+                  <Link href={n.href} className="text-paper/85 hover:text-paper hover:underline">
                     {n.label}
                   </Link>
                 </li>
@@ -38,22 +38,22 @@ export function Footer({ lang, dict }: { lang: Locale; dict: Dict }) {
             </ul>
           </div>
           <div>
-            <p className="mb-4 text-xs font-bold uppercase tracking-[0.2em] text-paper/40">{dict.footer.connect}</p>
+            <p className="mb-4 text-xs font-bold uppercase tracking-[0.2em] text-paper/60">{dict.footer.connect}</p>
             <ul className="space-y-2 text-sm">
               <li>
-                <a href={LINKEDIN_URL} target="_blank" rel="noopener noreferrer" className="text-paper/75 hover:text-coral-light">
+                <a href={LINKEDIN_URL} target="_blank" rel="noopener noreferrer" className="text-paper/85 hover:text-paper hover:underline">
                   LinkedIn
                 </a>
               </li>
               <li>
-                <a href={INSTAGRAM_URL} target="_blank" rel="noopener noreferrer" className="text-paper/75 hover:text-coral-light">
+                <a href={INSTAGRAM_URL} target="_blank" rel="noopener noreferrer" className="text-paper/85 hover:text-paper hover:underline">
                   Instagram
                 </a>
               </li>
             </ul>
           </div>
         </div>
-        <p className="py-6 text-xs text-paper/40">
+        <p className="py-6 text-xs text-paper/60">
           © {year} PigmentOCO. {dict.footer.rights}
         </p>
       </Container>

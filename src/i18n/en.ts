@@ -107,6 +107,9 @@ const en = {
       cta: "Our story",
     },
     news: { title: "In the news", all: "All news" },
+    collaborators: {
+      title: "Partners & Technology Collaborators",
+    },
     finalCta: {
       title: "Let's dye differently.",
       body: "Whether you run a dye house, build a brand or back deep tech, we'd love to hear from you.",
@@ -216,8 +219,8 @@ const en = {
     team: {
       title: "Founders",
       members: [
-        { name: "Amal Chebbi", role: "Co-founder" },
-        { name: "Ayoub Lassoued", role: "Co-founder" },
+        { name: "Amal Chebbi", photo: "/team/amal.jpg" },
+        { name: "Asma Chafter", photo: "/team/asma.jpg" },
       ],
     },
     values: {

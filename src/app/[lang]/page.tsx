@@ -2,6 +2,15 @@ import { resolvePage } from "@/i18n/page";
 import { Bloom, Button, Container, CtaBand, Eyebrow, ImageSlot } from "@/components/ui";
 import { NewsCards } from "@/components/NewsCards";
 
+const COLLABORATORS = [
+  { name: "Fédération Tunisienne du Textile et de l'Habillement", src: "/partners/ftth.png", h: "h-16 sm:h-20" },
+  { name: "Pôle de Compétitivité Monastir - El Fejja", src: "/partners/mfc-pole.gif", h: "h-12 sm:h-16" },
+  { name: "sOAR", src: "/partners/soar.jpeg", h: "h-16 sm:h-20 rounded-full" },
+  { name: "Positive Impact", src: "/partners/positive-impact.jpeg", h: "h-16 sm:h-20" },
+  { name: "INAM – Innovation Network for Advanced Materials", src: "/partners/inam.avif", h: "h-14 sm:h-16" },
+  { name: "Red Brick", src: "/partners/red-brick.png", h: "h-16 sm:h-24" },
+];
+
 const mark = {
   yes: { icon: "●", cls: "bg-coral text-paper" },
   no: { icon: "—", cls: "bg-sand text-muted" },
@@ -216,6 +225,20 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
             </Button>
           </div>
           <NewsCards lang={lang} limit={3} readLabel={dict.common.readArticle} />
+        </Container>
+      </section>
+
+      {/* COLLABORATORS */}
+      <section className="pb-4 pt-24 sm:pt-28">
+        <Container>
+          <h2 className="font-display text-center text-4xl sm:text-5xl">{h.collaborators.title}</h2>
+          <ul className="mt-14 grid grid-cols-2 items-center gap-x-8 gap-y-12 sm:grid-cols-3">
+            {COLLABORATORS.map((c) => (
+              <li key={c.src} className="flex justify-center">
+                <img src={c.src} alt={c.name} className={`w-auto object-contain ${c.h}`} loading="lazy" />
+              </li>
+            ))}
+          </ul>
         </Container>
       </section>
 
